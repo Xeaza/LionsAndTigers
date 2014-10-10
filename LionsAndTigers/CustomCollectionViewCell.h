@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CustomCollectionViewCell.h
 //  LionsAndTigers
 //
 //  Created by Taylor Wright-Sanson on 10/9/14.
@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TopViewController.h"
 
-@interface ViewController : UIViewController
+@interface CustomCollectionViewCell : UICollectionViewCell
 
-@property TopViewController *topViewController;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
-

@@ -14,6 +14,9 @@
 		34EF52E919E72B41004E0883 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34EF52E819E72B41004E0883 /* Images.xcassets */; };
 		34EF52EC19E72B41004E0883 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34EF52EA19E72B41004E0883 /* LaunchScreen.xib */; };
 		34EF52F819E72B41004E0883 /* LionsAndTigersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EF52F719E72B41004E0883 /* LionsAndTigersTests.m */; };
+		34EF530319E73077004E0883 /* HUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EF530219E73077004E0883 /* HUDViewController.m */; };
+		34EF530619E7317F004E0883 /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EF530519E7317F004E0883 /* TopViewController.m */; };
+		34EF530919E7645F004E0883 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EF530819E7645F004E0883 /* CustomCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		34EF52F119E72B41004E0883 /* LionsAndTigersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LionsAndTigersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34EF52F619E72B41004E0883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34EF52F719E72B41004E0883 /* LionsAndTigersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LionsAndTigersTests.m; sourceTree = "<group>"; };
+		34EF530119E73077004E0883 /* HUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDViewController.h; sourceTree = "<group>"; };
+		34EF530219E73077004E0883 /* HUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDViewController.m; sourceTree = "<group>"; };
+		34EF530419E7317F004E0883 /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
+		34EF530519E7317F004E0883 /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
+		34EF530719E7645F004E0883 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		34EF530819E7645F004E0883 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +94,12 @@
 				34EF52E019E72B41004E0883 /* AppDelegate.m */,
 				34EF52E219E72B41004E0883 /* ViewController.h */,
 				34EF52E319E72B41004E0883 /* ViewController.m */,
+				34EF530719E7645F004E0883 /* CustomCollectionViewCell.h */,
+				34EF530819E7645F004E0883 /* CustomCollectionViewCell.m */,
+				34EF530419E7317F004E0883 /* TopViewController.h */,
+				34EF530519E7317F004E0883 /* TopViewController.m */,
+				34EF530119E73077004E0883 /* HUDViewController.h */,
+				34EF530219E73077004E0883 /* HUDViewController.m */,
 				34EF52E519E72B41004E0883 /* Main.storyboard */,
 				34EF52E819E72B41004E0883 /* Images.xcassets */,
 				34EF52EA19E72B41004E0883 /* LaunchScreen.xib */,
@@ -219,8 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34EF530619E7317F004E0883 /* TopViewController.m in Sources */,
 				34EF52E419E72B41004E0883 /* ViewController.m in Sources */,
 				34EF52E119E72B41004E0883 /* AppDelegate.m in Sources */,
+				34EF530919E7645F004E0883 /* CustomCollectionViewCell.m in Sources */,
+				34EF530319E73077004E0883 /* HUDViewController.m in Sources */,
 				34EF52DE19E72B41004E0883 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
