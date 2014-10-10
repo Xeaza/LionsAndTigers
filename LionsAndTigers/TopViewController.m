@@ -21,55 +21,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // Initlize an array filled with lions for the collection view
     self.photosArray = [NSMutableArray array];
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_1"]];
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_2"]];
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_3"]];
-    // Do any additional setup after loading the view.
+
     self.hudViewController = [[HUDViewController alloc] init];
-    // Didn't work here
-    //[self.hudViewController setDelegate:self];
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
-//    self.hudViewController = [[HUDViewController alloc] init];
-//    self.hudViewController.delegate = self;
-//    NSLog(@"HUD Delegate in TopVC: %@", self.hudViewController.delegate);
-    NSLog(@"self Delegate in TopVC: %@", self.delegate);
 }
 
 - (IBAction)onHamburglerButtonPressed:(id)sender
 {
+    // Tell my delegate that I pressed the topRevalButton
     [self.delegate topRevalButtonTapped:self];
-    NSLog(@"dlkj %@", self);
-    // Setting delegate here doens't work... even though self.hudViewController is not nil
-    //self.hudViewController.delegate = self;
 }
 
-/*- (void)lionsButtonTapped
+- (void)showMeLions
 {
+    // Reinitlize photosArray (not sure if I have to do that) and then
+    // fill it with hungry lions
     self.photosArray = [NSMutableArray array];
     [self.photosArray addObject:[UIImage imageNamed:@"lion_1"]];
     [self.photosArray addObject:[UIImage imageNamed:@"lion_2"]];
     [self.photosArray addObject:[UIImage imageNamed:@"lion_3"]];
-    //[self.delegate tigersButtonTapped];;
     [self.collectionView reloadData];
-    NSLog(@"Lions loaded 🐨");
 }
 
-- (void)tigersButtonTapped
+- (void)showMeTigers
 {
+    // Reinitlize photosArray (not sure if I have to do that) and then
+    // fill it with hungry tigers
     self.photosArray = [NSMutableArray array];
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_1"]];
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_2"]];
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_3"]];
-    //[self.delegate tigersButtonTapped];;
     [self.collectionView reloadData];
-    NSLog(@"Tigers loaded 🐧");
-}*/
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {

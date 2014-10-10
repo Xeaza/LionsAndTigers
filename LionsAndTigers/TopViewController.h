@@ -19,6 +19,7 @@
 
 @property id <TopDelegate> delegate;
 
-//@property HUDViewController *hudViewController;
+- (void)showMeTigers;
+- (void)showMeLions;
 
 @end

@@ -21,12 +21,6 @@
 
 @implementation ViewController
 
--(void)viewWillAppear:(BOOL)animated
-{
-    //self.hudViewController = [[HUDViewController alloc] init];
-    //self.hudViewController.delegate = self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -52,16 +46,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
-    if ([segue.identifier isEqualToString:@"NavigationSegue"]){
+    if ([segue.identifier isEqualToString:@"NavigationSegue"])
+    {
+        // Tell topViewController that I (ViewController) will be it's delegate
         UINavigationController *navController = segue.destinationViewController;
         self.topViewController = [navController.childViewControllers objectAtIndex:0];
         self.topViewController.delegate = self;
-        //self.hudViewController = [[HUDViewController alloc] init];//[self.childViewControllers objectAtIndex:0];
-        //self.hudViewController.delegate = self.topViewController;
-        //NSLog(@"Navcontroller %@", [self.childViewControllers objectAtIndex:0]);
     }
     else if ([segue.identifier isEqualToString:@"HUDSegue"])
     {
+        // Tell hudViewController that I (ViewController) will be it's delegate
         HUDViewController *hudViewController = segue.destinationViewController;
         hudViewController.delegate = self;
     }
@@ -69,17 +63,14 @@
 
 -(void)lionsButtonTapped
 {
-    //NSLog(@"HUD delegate: %@", self.hudViewController.delegate);
-    self.lionImages = [NSMutableArray array];
-    [self.lionImages addObject:[UIImage imageNamed:@"lion_1"]];
-    [self.lionImages addObject:[UIImage imageNamed:@"lion_2"]];
-    [self.lionImages addObject:[UIImage imageNamed:@"lion_3"]];
-    NSLog(@"Lions pressed");
+    // I can call showMeLions on topViewController because I'm it's delegate
+    [self.topViewController showMeLions];
 }
 
 -(void)tigersButtonTapped
 {
-    NSLog(@"Tigers!");
+    // I can call showMeTigers on topViewController because I'm it's delegate
+    [self.topViewController showMeTigers];
 }
 
 - (void)didReceiveMemoryWarning

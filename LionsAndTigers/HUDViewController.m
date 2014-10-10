@@ -17,20 +17,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"self Delegate in HUDVC: %@", self.delegate);
 }
 
 - (IBAction)lionPressed:(UIButton *)sender
 {
+    // Tell my delegate (ViewController) to exicute the method lionsButtonTapped
+    // becuase I pressed on the lion button
     [self.delegate lionsButtonTapped];
-    NSLog(@"HUD Delegate on lion pressed: %@", self.delegate);
-    // When pressed say, Delegate I want you to initlize an array of lions and reload your data
 }
 
 - (IBAction)tigerPressed:(id)sender
 {
-    // When pressed say, Delegate I want you to initlize an array of tigers and reload your data
-    NSLog(@"Lion");
+    // Tell my delegate (ViewController) to exicute the method tigerButtonTapped
+    // becuase I pressed on the tiger button
+    [self.delegate tigersButtonTapped];
 }
 
 - (void)didReceiveMemoryWarning
