@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "HUDViewController.h"
 
-@interface ViewController () <TopDelegate>
+@interface ViewController () <TopDelegate, HUDDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLeadingSpaceConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTrailingSpaceConstraint;
@@ -57,8 +57,13 @@
         self.topViewController = [navController.childViewControllers objectAtIndex:0];
         self.topViewController.delegate = self;
         //self.hudViewController = [[HUDViewController alloc] init];//[self.childViewControllers objectAtIndex:0];
-        self.hudViewController.delegate = self.topViewController;
+        //self.hudViewController.delegate = self.topViewController;
         //NSLog(@"Navcontroller %@", [self.childViewControllers objectAtIndex:0]);
+    }
+    else if ([segue.identifier isEqualToString:@"HUDSegue"])
+    {
+        HUDViewController *hudViewController = segue.destinationViewController;
+        hudViewController.delegate = self;
     }
 }
 
@@ -70,6 +75,11 @@
     [self.lionImages addObject:[UIImage imageNamed:@"lion_2"]];
     [self.lionImages addObject:[UIImage imageNamed:@"lion_3"]];
     NSLog(@"Lions pressed");
+}
+
+-(void)tigersButtonTapped
+{
+    NSLog(@"Tigers!");
 }
 
 - (void)didReceiveMemoryWarning

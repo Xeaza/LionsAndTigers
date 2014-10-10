@@ -30,6 +30,7 @@
 - (IBAction)tigerPressed:(id)sender
 {
     // When pressed say, Delegate I want you to initlize an array of tigers and reload your data
+    NSLog(@"Lion");
 }
 
 - (void)didReceiveMemoryWarning

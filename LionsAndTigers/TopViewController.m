@@ -9,7 +9,7 @@
 #import "TopViewController.h"
 #import "CustomCollectionViewCell.h"
 
-@interface TopViewController () <UICollectionViewDataSource, UICollectionViewDelegate, HUDDelegate>
+@interface TopViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic)  NSMutableArray *photosArray;
@@ -49,7 +49,7 @@
     //self.hudViewController.delegate = self;
 }
 
-- (void)lionsButtonTapped
+/*- (void)lionsButtonTapped
 {
     self.photosArray = [NSMutableArray array];
     [self.photosArray addObject:[UIImage imageNamed:@"lion_1"]];
@@ -69,7 +69,7 @@
     //[self.delegate tigersButtonTapped];;
     [self.collectionView reloadData];
     NSLog(@"Tigers loaded 🐧");
-}
+}*/
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
