@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MvU-2r-qai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="713"/>
+            <point key="canvasLocation" x="979" y="1123"/>
         </scene>
         <!--Top View Controller-->
         <scene sceneID="eA8-cz-zmh">
@@ -149,10 +149,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="GBH-fG-l5J" id="bKm-sW-RMI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4s-kT-u7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2400" y="51"/>
+            <point key="canvasLocation" x="2346" y="427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rg2-zy-Xvl">
@@ -170,7 +173,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfp-2i-e5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="51"/>
+            <point key="canvasLocation" x="1644" y="427"/>
         </scene>
     </scenes>
 </document>

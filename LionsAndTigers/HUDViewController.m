@@ -8,40 +8,28 @@
 
 #import "HUDViewController.h"
 
-@interface HUDViewController ()
-
-@property NSMutableArray *tigerImages;
-@property NSMutableArray *lionImages;
+@interface HUDViewController ();
 
 @end
 
 @implementation HUDViewController
 
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//    // Do any additional setup after loading the view.
-//
-//}
-
-- (IBAction)lionPressed:(id)sender
+- (void)viewDidLoad
 {
-    NSLog(@"HUD delegate: %@", self.delegate);
-    self.lionImages = [NSMutableArray array];
-    [self.lionImages addObject:[UIImage imageNamed:@"lion_1"]];
-    [self.lionImages addObject:[UIImage imageNamed:@"lion_2"]];
-    [self.lionImages addObject:[UIImage imageNamed:@"lion_3"]];
-    
-    [self.delegate lionsButtonTapped:self.lionImages];
+    [super viewDidLoad];
+    NSLog(@"self Delegate in HUDVC: %@", self.delegate);
+}
+
+- (IBAction)lionPressed:(UIButton *)sender
+{
+    [self.delegate lionsButtonTapped];
+    NSLog(@"HUD Delegate on lion pressed: %@", self.delegate);
+    // When pressed say, Delegate I want you to initlize an array of lions and reload your data
 }
 
 - (IBAction)tigerPressed:(id)sender
 {
-    self.tigerImages = [NSMutableArray array];
-    [self.tigerImages addObject:[UIImage imageNamed:@"tiger_1"]];
-    [self.tigerImages addObject:[UIImage imageNamed:@"tiger_2"]];
-    [self.tigerImages addObject:[UIImage imageNamed:@"tiger_3"]];
-    [self.delegate tigersButtonTapped];
+    // When pressed say, Delegate I want you to initlize an array of tigers and reload your data
 }
 
 - (void)didReceiveMemoryWarning

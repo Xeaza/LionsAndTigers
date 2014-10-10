@@ -7,16 +7,25 @@
 //
 
 #import "ViewController.h"
+#import "HUDViewController.h"
 
 @interface ViewController () <TopDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLeadingSpaceConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTrailingSpaceConstraint;
 @property BOOL isOpen;
+@property NSMutableArray *lionImages;
+@property HUDViewController *hudViewController;
 
 @end
 
 @implementation ViewController
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    //self.hudViewController = [[HUDViewController alloc] init];
+    //self.hudViewController.delegate = self;
+}
 
 - (void)viewDidLoad
 {
@@ -45,13 +54,23 @@
 
     if ([segue.identifier isEqualToString:@"NavigationSegue"]){
         UINavigationController *navController = segue.destinationViewController;
-        TopViewController *topViewController = [navController.childViewControllers objectAtIndex:0];
-        topViewController.delegate = self;
+        self.topViewController = [navController.childViewControllers objectAtIndex:0];
+        self.topViewController.delegate = self;
+        //self.hudViewController = [[HUDViewController alloc] init];//[self.childViewControllers objectAtIndex:0];
+        self.hudViewController.delegate = self.topViewController;
+        //NSLog(@"Navcontroller %@", [self.childViewControllers objectAtIndex:0]);
     }
 }
 
-
-
+-(void)lionsButtonTapped
+{
+    //NSLog(@"HUD delegate: %@", self.hudViewController.delegate);
+    self.lionImages = [NSMutableArray array];
+    [self.lionImages addObject:[UIImage imageNamed:@"lion_1"]];
+    [self.lionImages addObject:[UIImage imageNamed:@"lion_2"]];
+    [self.lionImages addObject:[UIImage imageNamed:@"lion_3"]];
+    NSLog(@"Lions pressed");
+}
 
 - (void)didReceiveMemoryWarning
 {

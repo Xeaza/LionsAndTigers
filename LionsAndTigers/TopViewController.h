@@ -19,6 +19,6 @@
 
 @property id <TopDelegate> delegate;
 
-@property HUDViewController *hudViewController;
+//@property HUDViewController *hudViewController;
 
 @end

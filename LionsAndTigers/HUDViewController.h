@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopViewController.h"
 
 @protocol HUDDelegate
 
 - (void)tigersButtonTapped;
-- (void)lionsButtonTapped:(NSMutableArray *)lions;
+- (void)lionsButtonTapped;
 
 @end
 

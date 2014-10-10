@@ -8,12 +8,12 @@
 
 #import "TopViewController.h"
 #import "CustomCollectionViewCell.h"
-#import "HUDViewController.h"
 
-@interface TopViewController () <HUDDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface TopViewController () <UICollectionViewDataSource, UICollectionViewDelegate, HUDDelegate>
 
-
-@property NSMutableArray *currentImages;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic)  NSMutableArray *photosArray;
+@property HUDViewController *hudViewController;
 @end
 
 @implementation TopViewController
@@ -21,48 +21,65 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.photosArray = [NSMutableArray array];
+    [self.photosArray addObject:[UIImage imageNamed:@"tiger_1"]];
+    [self.photosArray addObject:[UIImage imageNamed:@"tiger_2"]];
+    [self.photosArray addObject:[UIImage imageNamed:@"tiger_3"]];
     // Do any additional setup after loading the view.
-//    self.currentImages = [NSMutableArray array];
-//    self.hudViewController = [[HUDViewController alloc] init];
-//    self.hudViewController.delegate = self;
-    //[self tigersButtonTapped];
+    self.hudViewController = [[HUDViewController alloc] init];
+    // Didn't work here
+    //[self.hudViewController setDelegate:self];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.currentImages = [NSMutableArray array];
-    self.hudViewController = [[HUDViewController alloc] init];
-    self.hudViewController.delegate = self;
-    NSLog(@"HUD Delegate in TopVC: %@", self.hudViewController.delegate);
+
+//    self.hudViewController = [[HUDViewController alloc] init];
+//    self.hudViewController.delegate = self;
+//    NSLog(@"HUD Delegate in TopVC: %@", self.hudViewController.delegate);
     NSLog(@"self Delegate in TopVC: %@", self.delegate);
 }
 
 - (IBAction)onHamburglerButtonPressed:(id)sender
 {
-    [self.delegate topRevalButtonTapped:self.hudViewController];
+    [self.delegate topRevalButtonTapped:self];
+    NSLog(@"dlkj %@", self);
+    // Setting delegate here doens't work... even though self.hudViewController is not nil
+    //self.hudViewController.delegate = self;
+}
+
+- (void)lionsButtonTapped
+{
+    self.photosArray = [NSMutableArray array];
+    [self.photosArray addObject:[UIImage imageNamed:@"lion_1"]];
+    [self.photosArray addObject:[UIImage imageNamed:@"lion_2"]];
+    [self.photosArray addObject:[UIImage imageNamed:@"lion_3"]];
+    //[self.delegate tigersButtonTapped];;
+    [self.collectionView reloadData];
+    NSLog(@"Lions loaded 🐨");
 }
 
 - (void)tigersButtonTapped
 {
-    NSLog(@"🐯");
-}
-
-- (void)lionsButtonTapped:(NSMutableArray *)lions
-{
-    self.currentImages = lions;
-    NSLog(@"🐨");
+    self.photosArray = [NSMutableArray array];
+    [self.photosArray addObject:[UIImage imageNamed:@"tiger_1"]];
+    [self.photosArray addObject:[UIImage imageNamed:@"tiger_2"]];
+    [self.photosArray addObject:[UIImage imageNamed:@"tiger_3"]];
+    //[self.delegate tigersButtonTapped];;
+    [self.collectionView reloadData];
+    NSLog(@"Tigers loaded 🐧");
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.currentImages.count;
+    return self.photosArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.imageView.image = [self.currentImages objectAtIndex:indexPath.row];
+    cell.imageView.image = [self.photosArray objectAtIndex:indexPath.row];
 
     return cell;
 }
