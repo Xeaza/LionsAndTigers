@@ -18,6 +18,6 @@
 
 @interface HUDViewController : UIViewController
 
-@property id <HUDDelegate> delegate;
+@property (weak) id<HUDDelegate> delegate;
 
 @end

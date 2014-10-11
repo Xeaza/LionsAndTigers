@@ -17,7 +17,7 @@
 
 @interface TopViewController : UIViewController
 
-@property id <TopDelegate> delegate;
+@property (weak) id <TopDelegate> delegate;
 
 - (void)showMeTigers;
 - (void)showMeLions;

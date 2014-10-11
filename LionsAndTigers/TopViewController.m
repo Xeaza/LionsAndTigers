@@ -46,6 +46,8 @@
     [self.photosArray addObject:[UIImage imageNamed:@"lion_2"]];
     [self.photosArray addObject:[UIImage imageNamed:@"lion_3"]];
     [self.collectionView reloadData];
+    // Shut the topViewController
+    [self.delegate topRevalButtonTapped:self];
 }
 
 - (void)showMeTigers
@@ -57,6 +59,8 @@
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_2"]];
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_3"]];
     [self.collectionView reloadData];
+    // Shut the topViewController
+    [self.delegate topRevalButtonTapped:self];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
