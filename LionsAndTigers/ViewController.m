@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLeadingSpaceConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTrailingSpaceConstraint;
-@property BOOL isOpen;
+@property (nonatomic, readonly) BOOL isOpen;
 @property NSMutableArray *lionImages;
 @property HUDViewController *hudViewController;
 
@@ -37,6 +37,10 @@
 //    return self.topLeadingSpaceConstraint != 0;
 //}
 
+- (BOOL)isOpen
+{
+    return self.topLeadingSpaceConstraint.constant != 0;
+}
 
 -(void)topRevealButtonTapped
 {
@@ -66,13 +70,11 @@
     {
         [self.topLeadingSpaceConstraint setConstant:self.view.bounds.size.width * .8];
         [self.topTrailingSpaceConstraint setConstant:-self.view.bounds.size.width * .8];
-        self.isOpen = YES;
     }
     else
     {
         [self.topLeadingSpaceConstraint setConstant:0];
         [self.topTrailingSpaceConstraint setConstant:0];
-        self.isOpen = NO;
     }
 
     // You can't put the above code to move the constraints in the animation block.
