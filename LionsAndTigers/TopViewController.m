@@ -27,7 +27,6 @@
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_1"]];
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_2"]];
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_3"]];
-
     self.hudViewController = [[HUDViewController alloc] init];
 }
 

@@ -34,11 +34,11 @@
 
 -(void)topRevalButtonTapped:(id)sender
 {
-    self.dynamicsAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    self.collisionBehavior = [[UICollisionBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view]];
-    self.gravityBehavior = [[UIGravityBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view]];
+    self.dynamicsAnimator     = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    self.collisionBehavior    = [[UICollisionBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view]];
+    self.gravityBehavior      = [[UIGravityBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view]];
     self.dynamicsItemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view]];
-    self.pushBehavior = [[UIPushBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view] mode:UIPushBehaviorModeContinuous];
+    self.pushBehavior         = [[UIPushBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view] mode:UIPushBehaviorModeContinuous];
 
     [self.collisionBehavior addBoundaryWithIdentifier:@"bottom"
                                             fromPoint:CGPointMake(-10, self.view.frame.size.height)
@@ -52,7 +52,8 @@
     [self.dynamicsAnimator addBehavior:self.pushBehavior];
     [self.dynamicsAnimator addBehavior:self.dynamicsItemBehavior];
 
-    if (!self.isOpen) {
+    if (!self.isOpen)
+    {
         [self.topLeadingSpaceConstraint setConstant:300];
         [self.topTrailingSpaceConstraint setConstant:-300];
         self.isOpen = YES;
