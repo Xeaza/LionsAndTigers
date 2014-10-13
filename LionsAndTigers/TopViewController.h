@@ -11,7 +11,7 @@
 
 @protocol TopDelegate
 
--(void)topRevalButtonTapped:(id)sender;
+-(void)topRevealButtonTapped;
 
 @end
 

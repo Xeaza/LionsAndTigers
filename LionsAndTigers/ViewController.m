@@ -32,9 +32,18 @@
     [super viewDidLoad];
 }
 
--(void)topRevalButtonTapped:(id)sender
+//- (void)setIsOpen:(BOOL)isOpen
+//{
+//    return self.topLeadingSpaceConstraint != 0;
+//}
+
+
+-(void)topRevealButtonTapped
 {
-    self.dynamicsAnimator     = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    /*
+     // TODO - Add dynamics to menu so it bounces when it opens and shuts
+     // - Add pan gesture to open menu
+     self.dynamicsAnimator     = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     self.collisionBehavior    = [[UICollisionBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view]];
     self.gravityBehavior      = [[UIGravityBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view]];
     self.dynamicsItemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:[NSArray arrayWithObject:self.view]];
@@ -51,11 +60,12 @@
     [self.dynamicsAnimator addBehavior:self.gravityBehavior];
     [self.dynamicsAnimator addBehavior:self.pushBehavior];
     [self.dynamicsAnimator addBehavior:self.dynamicsItemBehavior];
+     */
 
     if (!self.isOpen)
     {
-        [self.topLeadingSpaceConstraint setConstant:300];
-        [self.topTrailingSpaceConstraint setConstant:-300];
+        [self.topLeadingSpaceConstraint setConstant:self.view.bounds.size.width * .8];
+        [self.topTrailingSpaceConstraint setConstant:-self.view.bounds.size.width * .8];
         self.isOpen = YES;
     }
     else
@@ -68,7 +78,7 @@
     // You can't put the above code to move the constraints in the animation block.
     // It won't animate. Putting self.view layoutIfNeed in the animation block will make
     // the change animate.
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         [self.view layoutIfNeeded];
     }];
 }

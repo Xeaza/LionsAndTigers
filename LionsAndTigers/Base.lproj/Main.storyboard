@@ -147,7 +147,7 @@
                     <navigationItem key="navigationItem" id="yW7-Sp-klA">
                         <barButtonItem key="leftBarButtonItem" title="≡" id="7tm-Pc-Igu">
                             <connections>
-                                <action selector="onHamburglerButtonPressed:" destination="haX-EC-kid" id="NJj-x5-BxK"/>
+                                <action selector="onHamburglerButtonPressed" destination="haX-EC-kid" id="nJv-QT-NQ5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

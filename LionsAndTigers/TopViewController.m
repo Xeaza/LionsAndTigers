@@ -30,10 +30,10 @@
     self.hudViewController = [[HUDViewController alloc] init];
 }
 
-- (IBAction)onHamburglerButtonPressed:(id)sender
+- (IBAction)onHamburglerButtonPressed
 {
     // Tell my delegate that I pressed the topRevalButton
-    [self.delegate topRevalButtonTapped:self];
+    [self.delegate topRevealButtonTapped];
 }
 
 - (void)showMeLions
@@ -46,7 +46,7 @@
     [self.photosArray addObject:[UIImage imageNamed:@"lion_3"]];
     [self.collectionView reloadData];
     // Shut the topViewController
-    [self.delegate topRevalButtonTapped:self];
+    [self.delegate topRevealButtonTapped];
 }
 
 - (void)showMeTigers
@@ -59,7 +59,7 @@
     [self.photosArray addObject:[UIImage imageNamed:@"tiger_3"]];
     [self.collectionView reloadData];
     // Shut the topViewController
-    [self.delegate topRevalButtonTapped:self];
+    [self.delegate topRevealButtonTapped];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
